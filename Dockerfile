@@ -30,7 +30,7 @@ WORKDIR /kf/server/System
 RUN chmod +x /kf/setup.sh
 COPY kf.ini /kf/server/System/Default.ini
 COPY mods/*.u mods/*.ucl mods/*.int mods/*.ini /kf/server/System/
-COPY mods/*.utx mods/*.ucl mods/*.int mods/*.ini /kf/server/Textures/
+COPY mods/*.utx /kf/server/Textures/
 
 EXPOSE 7707/udp \
 	7708/udp \
