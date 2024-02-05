@@ -1,11 +1,11 @@
-# build args:
+# Build args:
 |Variable       | Utility                                         |
 |---------------|-------------------------------------------------|
 |STEAM_LOGIN    | set the steam login to retrive the server files |
 |STEAM_PASS     | set the steam password                          |
-|STEAM_GUARD    | steam guard code (don't set if not needed)      |
+|STEAM_GUARD    | steam guard code (from your phone)              |
 
-# environements variables
+# Environements variables
 |Variable         | Utility                                                                   |
 |-----------------|---------------------------------------------------------------------------|
 |KF_SERVER_NAME   | set the server name (in the server list)                                  |
@@ -16,12 +16,12 @@
 |KF_DIFFICULTY    | set the game difficulty                                                   |
 |KF_MAIL          | admin email address                                                       |
 
-# to build the image:
+# Build the image:
 ```shell
-docker build -t killingfloor --build-arg STEAM_LOGIN=login --build-arg STEAM_PASS=pass .
+docker build -t killingfloor --build-arg STEAM_LOGIN=login --build-arg STEAM_PASS=pass STEAM_GUARD=xxxxx .
 ```
 
-# to run the server:
+# Run the server:
 ```shell
 docker run -d --name kf -p 8075:8075 -p 7707:7707/udp -p 7708:7708/udp -p 20560:20560/udp -p 28852:28852 -e KF_LOGIN=login -e KF_PASS=adminpass -e KF_GAMELEN=2 -e KF_SERVER_NAME=KF_Server snicolet/kf-server
 ```
