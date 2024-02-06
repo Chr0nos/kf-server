@@ -11,8 +11,8 @@ then
 	sed -i s/AdminEmail=/AdminEmail=${KF_MAIL}/g ${KF_CONFIG}
 	sed -i s/KFGameLength=2/KFGameLength=${KF_GAMELEN}/g ${KF_CONFIG}
 	sed -i s/GameDifficulty=7.000000/GameDifficulty=${KF_DIFFICULTY}/g ${KF_CONFIG}
+	export LD_LIBRARY_PATH=/root/.local/share/Steam/steamcmd/linux32:.
 	./ucc-bin server KF-BioticsLab.rom?game=KFmod.KFGameType?VACSecured=true -nohomedir ini=${KF_CONFIG}
 else
 	echo "Do not run this script outside the docker image"
 fi
-
