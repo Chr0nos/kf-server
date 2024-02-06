@@ -66,7 +66,7 @@ services:
     - KF_PASS=adminpass
     - KF_GAMELEN=2
     - KF_DIFFICULTY=7
-    - KF_SERVER_NAME=Pepper
+    - KF_SERVER_NAME=The server name
     - KF_SLOTS=6
     - KF_MUTATORS=MutKFAntiBlocker.MutKFAntiBlocker,KFNoDramaMut.KFNoDramaMut,KFPatHPLeft.MutPatHPLeft,MutKillMessage.MutKillMessage,MutVisibleSpecsW.MutVisSpecsW
     restart: unless-stopped
