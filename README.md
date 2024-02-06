@@ -38,7 +38,7 @@ unset STEAM_LOGIN
 
 # Run the server:
 ```shell
-docker run -d --name kf -p 8075:8075 -p 7707:7707/udp -p 7708:7708/udp -p 20560:20560/udp -p 28852:28852 -e KF_LOGIN=login -e KF_PASS=adminpass -e KF_GAMELEN=2 -e KF_SERVER_NAME=KF_Server snicolet/kf-server
+docker run -d --name kf -p 8075:8075 -p 7707:7707/udp -p 7708:7708/udp -p 7717:7717/udp -p 20560:20560/udp -p 28852:28852 -e KF_LOGIN=login -e KF_PASS=adminpass -e KF_GAMELEN=2 -e KF_SERVER_NAME=KF_Server snicolet/kf-server
 ```
 
 Or using docker compose:
@@ -52,6 +52,7 @@ services:
     - 8075:8075
     - 7707:7707/udp
     - 7708:7708/udp
+    - 7717:7717/udp
     - 20560:20560/udp
     - 28852:28852
     environment:

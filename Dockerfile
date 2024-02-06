@@ -20,6 +20,7 @@ ENV KF_LOGIN=admin \
 	KF_CONFIG=/kf/server/System/killingfloor-server.ini \
 	TERM=xterm
 
+RUN cp -v /kf/server/System/Default.ini /kf/server/System/Default.ini.bak
 COPY setup.sh kf.ini /kf/
 WORKDIR /kf/server/System
 RUN chmod +x /kf/setup.sh
