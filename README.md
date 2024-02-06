@@ -1,8 +1,6 @@
 # Build args:
 |Variable       | Utility                                         |
 |---------------|-------------------------------------------------|
-|STEAM_LOGIN    | set the steam login to retrive the server files |
-|STEAM_PASS     | set the steam password                          |
 |STEAM_GUARD    | steam guard code (from your phone)              |
 
 # Environements variables
@@ -15,6 +13,8 @@
 |KF_GAMELEN       | game len: 0: sort / 1: medium / 2: long / 3: custom                       |
 |KF_DIFFICULTY    | set the game difficulty                                                   |
 |KF_MAIL          | admin email address                                                       |
+|KF_SLOTS         | how many players can join (should be 6)                                   |
+|KF_MUTATORS      | what mutators to enable by default, separate them with a comma (optional) |
 
 # Build the image:
 ## Dependencies
@@ -36,6 +36,11 @@ unset STEAM_PASS
 unset STEAM_LOGIN
 ```
 
+## Useful readings
+- https://steamcommunity.com/app/1250/discussions/0/3317353727670499474/
+- https://wiki.tripwireinteractive.com/index.php/Dedicated_Server_(KillingFloor)
+
+
 # Run the server:
 ```shell
 docker run -d --name kf -p 8075:8075 -p 7707:7707/udp -p 7708:7708/udp -p 7717:7717/udp -p 20560:20560/udp -p 28852:28852 -e KF_LOGIN=login -e KF_PASS=adminpass -e KF_GAMELEN=2 -e KF_SERVER_NAME=KF_Server snicolet/kf-server
@@ -43,7 +48,7 @@ docker run -d --name kf -p 8075:8075 -p 7707:7707/udp -p 7708:7708/udp -p 7717:7
 
 Or using docker compose:
 ```yaml
-version: "3.1"
+version: "3.8"
 services:
   kf:
     image: snicolet/kf-server
@@ -55,13 +60,17 @@ services:
     - 7717:7717/udp
     - 20560:20560/udp
     - 28852:28852
+    - 28852:28852/udp
     environment:
     - KF_LOGIN=admin
     - KF_PASS=adminpass
     - KF_GAMELEN=2
     - KF_DIFFICULTY=7
-    - KF_SERVER_NAME=Server Name
+    - KF_SERVER_NAME=Pepper
+    - KF_SLOTS=6
+    - KF_MUTATORS=MutKFAntiBlocker.MutKFAntiBlocker,KFNoDramaMut.KFNoDramaMut,KFPatHPLeft.MutPatHPLeft,MutKillMessage.MutKillMessage
     restart: unless-stopped
+
 ```
 
 then

@@ -2,17 +2,13 @@
 if (test -d /kf/server/System)
 then
 	cd /kf/server/System
-	cp -v Default.ini ${KF_CONFIG}
-	sed -i s/AdminPassword=/AdminPassword=${KF_PASS}/g ${KF_CONFIG}
-	sed -i s/GamePassword=/GamePassword=${KF_PLAYPASS}/g ${KF_CONFIG}
-	sed -i s/AdminName=/AdminName=$KF_LOGIN/g ${KF_CONFIG}
-	# sed -i s/CharSet="iso-8859-1"/CharSet="utf-8"/g UWeb.int
-	sed -i s/ServerName=/ServerName=${KF_SERVER_NAME}/g ${KF_CONFIG}
-	sed -i s/AdminEmail=/AdminEmail=${KF_MAIL}/g ${KF_CONFIG}
-	sed -i s/KFGameLength=0/KFGameLength=${KF_GAMELEN}/g ${KF_CONFIG}
-	sed -i s/GameDifficulty=7.000000/GameDifficulty=${KF_DIFFICULTY}/g ${KF_CONFIG}
+	sed -i s/AdminPassword=/AdminPassword=${KF_PASS}/g Default.ini
+	sed -i s/GamePassword=/GamePassword=${KF_PLAYPASS}/g Default.ini
+	sed -i s/AdminName=/AdminName=$KF_LOGIN/g Default.ini
+	sed -i s/ServerName=/ServerName=${KF_SERVER_NAME}/g Default.ini
+	sed -i s/AdminEmail=/AdminEmail=${KF_MAIL}/g Default.ini
 	export LD_LIBRARY_PATH=/root/.local/share/Steam/steamcmd/linux32:.
-	./ucc-bin server KF-BioticsLab.rom?game=KFmod.KFGameType?VACSecured=true -nohomedir ini=${KF_CONFIG}
+	./ucc-bin-real server KF-BioticsLab.rom?game=KFmod.KFGameType?VACSecured=true?MaxPlayers=${KF_SLOTS}?Mutator=${KF_MUTATORS}?GameDifficulty=${KF_DIFFICULTY}?KFGameLength=${KF_GAMELEN}?MapVote=true?ScoreBoardDelay=5 -nohomedir
 else
 	echo "Do not run this script outside the docker image"
 fi

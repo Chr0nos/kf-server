@@ -17,7 +17,6 @@ ENV KF_LOGIN=admin \
 	KF_PASS=admin \
 	KF_GAMELEN=2 \
 	KF_DIFFICULTY=7.0 \
-	KF_CONFIG=/kf/server/System/killingfloor-server.ini \
 	TERM=xterm
 
 RUN cp -v /kf/server/System/Default.ini /kf/server/System/Default.ini.bak
