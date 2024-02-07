@@ -51,7 +51,7 @@ unset STEAM_LOGIN
 | KFNoDramaMut            |         2009/06/04 | whitelisted   | https://forums.tripwireinteractive.com/index.php?threads/kfnodramamut-disable-random-zed-time.33972/ |
 | MutKFAntiBlocker        |                1.1 | whitelisted   |                                                                                                      |
 | MutKillMessage       	  |                2.0 | whitelisted   | https://forums.tripwireinteractive.com/index.php?threads/mutator-specimen-kill-messages.52412/       |
-| Visible Spectators - W  |                  ? | whitelisted   | https://forums.tripwireinteractive.com/index.php?threads/mutator-visible-spectators.83133/           |
+| Visible Spectators - W  |                  ? | greylisted    | https://forums.tripwireinteractive.com/index.php?threads/mutator-visible-spectators.83133/           |
 | SuperZombieMut          |              2.2.1 | whitelisted   | |
 | SuperZombieMut          |              2.3   | greylisted    | |
 | ScrN Balance            |              9.51  | blacklisted   | https://forums.tripwireinteractive.com/index.php?threads/mutator-total-game-balance-gunslinger-perk-scrn-balance.82615/ |
@@ -90,6 +90,11 @@ services:
     - KF_SLOTS=6
     - KF_MUTATORS=MutKFAntiBlocker.MutKFAntiBlocker,KFNoDramaMut.KFNoDramaMut,KFPatHPLeft.MutPatHPLeft,MutKillMessage.MutKillMessage,MutVisibleSpecsW.MutVisSpecsW
     restart: unless-stopped
+    # This part is not mandatory but allow you to mount mods folder,
+    # they will be installed at runtime, of course here i suppose you've put
+    # your mods into a `my_mods` folder (without keeping the folder structure)
+    volumes:
+    - ./my_mods:/mods:ro
 
 ```
 
