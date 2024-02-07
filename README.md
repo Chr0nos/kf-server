@@ -39,7 +39,27 @@ unset STEAM_LOGIN
 ## Useful readings
 - https://steamcommunity.com/app/1250/discussions/0/3317353727670499474/
 - https://wiki.tripwireinteractive.com/index.php/Dedicated_Server_(KillingFloor)
+- https://wiki.tripwireinteractive.com/index.php/List_of_mutators_(Killing_Floor)
+- https://forums.tripwireinteractive.com/index.php?threads/kf-mutator-whitelist-and-fix-submission-thread.94259/
 
+## Others usefull informations
+- The whitelist system for maps has been removed by tripwire, all maps except test maps are ok to gain experience on perks
+
+| Mod                     |            version | Status        | Url                                                                                                  |
+|-------------------------|--------------------|---------------|------------------------------------------------------------------------------------------------------|
+| Patriarch HP Left	      |                1.0 | whitelisted   | https://forums.tripwireinteractive.com/index.php?threads/mutator-patriarch-hp-left.46296/            |
+| KFNoDramaMut            |         2009/06/04 | whitelisted   | https://forums.tripwireinteractive.com/index.php?threads/kfnodramamut-disable-random-zed-time.33972/ |
+| MutKFAntiBlocker        |                1.1 | whitelisted   |                                                                                                      |
+| MutKillMessage       	  |                2.0 | whitelisted   | https://forums.tripwireinteractive.com/index.php?threads/mutator-specimen-kill-messages.52412/       |
+| Visible Spectators - W  |                  ? | whitelisted   | https://forums.tripwireinteractive.com/index.php?threads/mutator-visible-spectators.83133/           |
+| SuperZombieMut          |              2.2.1 | whitelisted   | |
+| SuperZombieMut          |              2.3   | greylisted    | |
+| ScrN Balance            |              9.51  | blacklisted   | https://forums.tripwireinteractive.com/index.php?threads/mutator-total-game-balance-gunslinger-perk-scrn-balance.82615/ |
+
+note:
+- whitelisted == you can use and level your perks
+- greylisted == you can use your perks but not level them
+- blacklisted == you can't use nor level your perks
 
 # Run the server:
 ```shell
