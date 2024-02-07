@@ -102,3 +102,6 @@ then
 ```shell
 docker compose up -d
 ```
+
+## Install custom mods & maps
+You can mount a folder into `/mods`, the script will install the files in the correct places, every files must be in a flat list at the root of this folder including maps, mods, textures etc
