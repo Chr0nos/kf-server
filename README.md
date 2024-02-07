@@ -63,7 +63,7 @@ note:
 
 # Run the server:
 ```shell
-docker run -d --name kf -p 8075:8075 -p 7707:7707/udp -p 7708:7708/udp -p 7717:7717/udp -p 20560:20560/udp -p 28852:28852 -e KF_LOGIN=login -e KF_PASS=adminpass -e KF_GAMELEN=2 -e KF_SERVER_NAME=KF_Server -e KF_SLOTS=6 -e KF_MUTATORS=MutKFAntiBlocker.MutKFAntiBlocker,KFNoDramaMut.KFNoDramaMut,KFPatHPLeft.MutPatHPLeft,MutKillMessage.MutKillMessage,MutVisibleSpecsW.MutVisSpecsW snicolet/kf-server
+docker run -d --name kf -p 8075:8075 -p 7707:7707/udp -p 7708:7708/udp -p 7717:7717/udp -p 20560:20560/udp -p 28852:28852 -e KF_LOGIN=login -e KF_PASS=adminpass -e KF_GAMELEN=2 -e KF_SERVER_NAME=KF_Server -e KF_SLOTS=6 -e KF_MUTATORS=MutKFAntiBlocker.MutKFAntiBlocker,KFNoDramaMut.KFNoDramaMut,KFPatHPLeft.MutPatHPLeft,MutKillMessage.MutKillMessage snicolet/kf-server
 ```
 
 Or using docker compose:
@@ -88,7 +88,7 @@ services:
     - KF_DIFFICULTY=7
     - KF_SERVER_NAME=The server name
     - KF_SLOTS=6
-    - KF_MUTATORS=MutKFAntiBlocker.MutKFAntiBlocker,KFNoDramaMut.KFNoDramaMut,KFPatHPLeft.MutPatHPLeft,MutKillMessage.MutKillMessage,MutVisibleSpecsW.MutVisSpecsW
+    - KF_MUTATORS=MutKFAntiBlocker.MutKFAntiBlocker,KFNoDramaMut.KFNoDramaMut,KFPatHPLeft.MutPatHPLeft,MutKillMessage.MutKillMessage
     restart: unless-stopped
     # This part is not mandatory but allow you to mount mods folder,
     # they will be installed at runtime, of course here i suppose you've put
